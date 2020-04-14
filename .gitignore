@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #custom
-Database/MysqlConnection.js
+Database/
