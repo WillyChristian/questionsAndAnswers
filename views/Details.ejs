@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ERROR</title>
+    <%- include ("./partials/Header.ejs") %>
+</head>
+
+<body>
+    <%- include ("./partials/navbar.ejs") %>
+    <div class="container w-75 text-center my-5">
+        <h1><%= response.title %> </h1>
+        <hr>
+    </div>
+    <div class="container w-75 text-center my-5">
+        <h3><%= response.description %> </h3>        
+    </div>
+    <% if (answer !== null) { %>
+        <% answer.map(element => { %>
+            <div class="container w-75 my-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nome do usuário</h5>
+                        <p class="card-text"><%= element.description %> </p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+    <div class="container w-50">
+        <form method="POST" action="/answer">
+            <fieldset>
+                <legend>Digite sua resposta</legend>
+                <div class="form-group">
+                    <textarea id="answer" class="form-control" name="answer" rows="5"></textarea>
+                    <input type="hidden" name="perguntaId" value=<%= response.id %>>
+                </div>
+                <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                </a>
+            </fieldset>
+        </form>
+    </div>
+    <%- include ("./partials/Footer.ejs") %>
+</body>
+
+</html>

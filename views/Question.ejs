@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Perguntas</title>
+    <%- include ("./partials/Header.ejs") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Página de perguntas</h1>
+    </div>
+    <%- include ("./partials/navbar.ejs") %>
+
+    <div class="container my-1 w-50">
+        <div class="card">
+            <div class="card-header">
+                <h3>Formulário de envio de perguntas</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/quest">
+                  <div class="form-group">
+                    <label for="title">Título da Pergunta</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Descrição</label>
+                    <textarea id="description" class="form-control" name="description" rows="2"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include ("./partials/Footer.ejs") %>
+</body>
+</html>

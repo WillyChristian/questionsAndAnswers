@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HOME</title>
+      <%- include ("./partials/Header.ejs") %>   
+      </head>
+      <body>
+        <div class="container w-25">
+          <h1>Página Inicial</h1>
+        </div>
+        <%- include ("./partials/navbar.ejs") %>
+        <div class="container w-25 my-3">
+          <h3>Lista de Perguntas</h3>
+        </div>
+        <hr>
+        <% questions.map(element => { %>
+          <div class="container-fluid w-75">
+            <div class="card my-1">
+              <div class="card-header bg-secondary">
+                <a class="text-white text-decoration-none" href=/question/<%=element.id%>  </a><%= element.title %></a>
+              </div>
+              <div class="card-footer">
+               <!-- <a href="/answers" class="btn btn-outline-dark">Responder</a> -->
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      <%- include ("./partials/Footer.ejs") %> 
+      </body>
+</html>
